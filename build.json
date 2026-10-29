@@ -1,0 +1,5 @@
+{
+  "sha": "5f4cdac3a8f9c109959d946cc91f49d10547b2c3",
+  "version": "1.0.1",
+  "notes": "Rename to Kairos; auto-save settings; compile with Nuitka; build in public repo\n\n- Rename the app and package from Moment to Kairos, migrating Moment installs\n  and publishing a bridge release to moment-releases.\n- Settings save as soon as a control changes; the Save button is gone.\n- tools/build.py compiles the kairos package to a native module with Nuitka\n  before PyInstaller bundles it, so no Python source or bytecode ships.\n- Builds run in the public kairos-releases repo (tools/public-build.yml);\n  this repo's workflow only triggers them."
+}

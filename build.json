@@ -1,5 +1,5 @@
 {
-  "sha": "b4a7b6c8cb827334700ef4174548b214106078c8",
-  "version": "1.0.10",
-  "notes": "Mac probe: run the banner loop, which reads the command queue"
+  "sha": "8b3379471c3f36d20d3a0e2593ae715eca5268e7",
+  "version": "1.0.11",
+  "notes": "Mac probe: capture the mascot's own window"
 }

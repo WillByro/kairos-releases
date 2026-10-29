@@ -1,5 +1,5 @@
 {
-  "sha": "4c40a79e6046a86960b042f55d88cf8f8bc36330",
-  "version": "1.0.16",
-  "notes": "Mascot moods, remarks, and full-screen manners\n\n- Happy during a session; cross outside one (frown and an anime cross-mark), and every few\n  minutes it says something disappointed but encouraging in a pixel speech bubble. It cheers when\n  a session starts.\n- Its feet now rest on top of the taskbar or Dock rather than sinking into it.\n- Over a full-screen video (a media player, or a video site in a browser) it hides; over any\n  other full-screen app it drops to the bottom of the screen, since the taskbar's hidden."
+  "sha": "167202f0604013f045d759e5cd5442d211a2a7d4",
+  "version": "1.0.17",
+  "notes": "Judge new apps and sites sooner; right-click the mascot to hide it; Mac floor\n\n- The first check of an app or site starts half a second after it comes to the front, in the\n  background, and the loop acts the moment the verdict is back (it used to wait 2s, ask, then\n  wait for its next 1s tick). The loop looks twice a second instead of once.\n- Right-click the penguin: hide it for 15 minutes, an hour, or the rest of the day, or turn it\n  off (the same as the Settings switch). While it's hidden, things close without it.\n- macOS: it stands at the bottom of the screen. The Dock is a shelf in the middle rather than a\n  bar along the edge, so standing on it left the penguin in mid-air everywhere else."
 }

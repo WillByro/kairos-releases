@@ -1,5 +1,5 @@
 {
-  "sha": "2496c0f8d78aa44b20a42824a7dcb660bc128cb1",
-  "version": "1.0.9",
-  "notes": "Drag the mascot around and it falls back to the floor; smaller badge; Mac probe\n\n- Pick the penguin up and it flails; let go and it drops with a little bounce and makes that spot\n  its home. A click without dragging still makes it wave.\n- A smaller Kairos mark on its belly.\n- An error handling one banner command no longer stops the banner loop.\n- tools/mac_probe.py and a manual workflow to see what the mascot does on a real Mac."
+  "sha": "b4a7b6c8cb827334700ef4174548b214106078c8",
+  "version": "1.0.10",
+  "notes": "Mac probe: run the banner loop, which reads the command queue"
 }

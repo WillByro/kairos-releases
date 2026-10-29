@@ -1,5 +1,5 @@
 {
-  "sha": "e88c6430fdd6731ba690a3073de4971b97a512a2",
-  "version": "1.0.12",
-  "notes": "Mac probe: compare ways of drawing in a see-through window"
+  "sha": "c58083e4ed7f6a91005ece731e449235ffb4a233",
+  "version": "1.0.13",
+  "notes": "Mac probe: try AppKit transparency and a native image view"
 }

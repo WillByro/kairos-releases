@@ -1,5 +1,5 @@
 {
-  "sha": "ea3559f38e2c26732aeddfec1bdde941c52f6dd0",
-  "version": "1.0.7",
-  "notes": "Faster app and tab pickup on macOS; a cuter mascot that walks in from the screen edge\n\n- macOS: take the frontmost app from the window server's stacking order; NSWorkspace's\n  frontmostApplication lagged behind on the agent's worker thread.\n- Re-read a browser's URL every tick when there's no window title to notice tab switches by.\n- The mascot is a rounder penguin with the Kairos mark on its belly. It walks in from the nearer\n  screen edge, floats above other apps on macOS, and the window closes when it pecks the button\n  rather than after a fixed delay."
+  "sha": "3c6a037618833da08d4c7822c3e198eac8459ada",
+  "version": "1.0.8",
+  "notes": "Pixel-art mascot that lives at the bottom of the screen\n\nWith Mascot on, the penguin sits above the taskbar or Dock: it blinks, wanders a little and dozes\noff, and waves when clicked. When something off-task has to close it waddles over, slaps the\nclose button with a flipper, and walks home. Drawn as a pixel sprite wearing the Kairos mark."
 }

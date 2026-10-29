@@ -1,5 +1,5 @@
 {
-  "sha": "f015e20ea3ddf1ce5d78d8b6826dfc243dc67eee",
-  "version": "1.0.14",
-  "notes": "Mac probe: fix the AppKit lookup; time out"
+  "sha": "d0d4a2535d7d0699a21e73acb3409b8001066364",
+  "version": "1.0.15",
+  "notes": "Draw the mascot in a native window on macOS\n\nTk draws nothing in a see-through window on macOS (checked on a real Mac: the window was on screen\nbut every pixel was clear), so the penguin never appeared there. On macOS it's now an NSWindow\nholding an image view, which also passes its clicks and drags to the mascot; Windows keeps the\nkeyed Tk window."
 }

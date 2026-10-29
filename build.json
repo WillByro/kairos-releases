@@ -1,5 +1,5 @@
 {
-  "sha": "7da85f64c990ad5b2cd200de672553618df2a64a",
-  "version": "1.0.4",
-  "notes": "Fix the agent's Dock icon, floating banners and typing in them on macOS\n\n- The agent sets itself to an accessory app, so it no longer sits in the Dock\n  with an icon that can't be quit (launchd restarts it); only the window shows one.\n- Banners float above every app and Space, and no longer open as tabs.\n- Clicking the banner's text box activates it so keystrokes reach it.\n- The longer \"appeal\" countdown starts only when the user clicks into the text\n  box. It used to start whenever the banner was frontmost, which on macOS was\n  every time it appeared, so warnings ignored the warning length setting."
+  "sha": "1eb3483afbcf543566724e295d122bcb62b1c587",
+  "version": "1.0.5",
+  "notes": "Fix update checks on macOS: verify HTTPS with certifi's certificates\n\nThe Mac app's Python doesn't use the system certificate store, so every\nrequest to the update feed failed certificate checks (\"Couldn't reach the\nupdate server (URLError)\"). Fetches now use certifi's bundle, and the real\nerror is logged."
 }

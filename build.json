@@ -1,5 +1,5 @@
 {
-  "sha": "c58083e4ed7f6a91005ece731e449235ffb4a233",
-  "version": "1.0.13",
-  "notes": "Mac probe: try AppKit transparency and a native image view"
+  "sha": "f015e20ea3ddf1ce5d78d8b6826dfc243dc67eee",
+  "version": "1.0.14",
+  "notes": "Mac probe: fix the AppKit lookup; time out"
 }

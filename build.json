@@ -1,5 +1,5 @@
 {
-  "sha": "fea35c248fc1399cb9a78599a30412ea0c44d171",
-  "version": "1.0.3",
-  "notes": "Windows installer; unblock files extracted from a downloaded zip\n\nFiles extracted from a downloaded zip keep Windows' \"from the internet\" mark,\nand .NET refuses to load marked DLLs, so the window failed to open\n(Failed to resolve Python.Runtime.Loader.Initialize). Self-install now strips\nthe mark, and new Windows users get Kairos-setup.exe (Inno Setup, per-user,\nno admin), whose installed files never carry it and which unpacks faster."
+  "sha": "7da85f64c990ad5b2cd200de672553618df2a64a",
+  "version": "1.0.4",
+  "notes": "Fix the agent's Dock icon, floating banners and typing in them on macOS\n\n- The agent sets itself to an accessory app, so it no longer sits in the Dock\n  with an icon that can't be quit (launchd restarts it); only the window shows one.\n- Banners float above every app and Space, and no longer open as tabs.\n- Clicking the banner's text box activates it so keystrokes reach it.\n- The longer \"appeal\" countdown starts only when the user clicks into the text\n  box. It used to start whenever the banner was frontmost, which on macOS was\n  every time it appeared, so warnings ignored the warning length setting."
 }

@@ -63,7 +63,12 @@ jobs:
           path: |
             src/out/Kairos-${{ matrix.target }}.zip
             src/out/Moment-${{ matrix.target }}.zip
+            src/out/Kairos-setup.exe
           if-no-files-found: error
+      - name: Check the Windows installer was built
+        if: matrix.target == 'windows-x64'
+        shell: bash
+        run: test -f src/out/Kairos-setup.exe
 
   release:
     needs: build

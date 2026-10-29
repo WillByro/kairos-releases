@@ -1,5 +1,5 @@
 {
-  "sha": "8b3379471c3f36d20d3a0e2593ae715eca5268e7",
-  "version": "1.0.11",
-  "notes": "Mac probe: capture the mascot's own window"
+  "sha": "e88c6430fdd6731ba690a3073de4971b97a512a2",
+  "version": "1.0.12",
+  "notes": "Mac probe: compare ways of drawing in a see-through window"
 }

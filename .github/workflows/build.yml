@@ -1,0 +1,106 @@
+name: Build and release
+
+# Lives on the `build` branch of the public WillByro/kairos-releases repo (copied from tools/public-build.yml
+# in the private source repo), where Actions minutes are free. The private repo's workflow starts it by
+# committing build.json here. The source is fetched for the build with a read-only deploy key and is
+# never committed to this repo; `main` holds only the published downloads and signed update feed.
+on:
+  push:
+    branches: [build]
+    paths: [build.json]
+  workflow_dispatch:  # rebuild whatever build.json names
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  build:
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - { os: windows-latest, target: windows-x64 }
+          - { os: macos-latest, target: macos-arm64 }
+          - { os: macos-15-intel, target: macos-x64 }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read build.json
+        id: job
+        shell: bash
+        run: |
+          sha=$(python3 -c "import json; print(json.load(open('build.json'))['sha'])")
+          version=$(python3 -c "import json; print(json.load(open('build.json'))['version'])")
+          [[ $sha =~ ^[0-9a-f]{40}$ && $version =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "bad build.json"; exit 1; }
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+          repository: WillByro/Moment
+          ref: ${{ steps.job.outputs.sha }}
+          ssh-key: ${{ secrets.SOURCE_DEPLOY_KEY }}
+          persist-credentials: false
+          path: src
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        working-directory: src
+        run: python -m pip install -r requirements.txt pyinstaller nuitka pytest
+      - name: Test
+        working-directory: src
+        run: python -m pytest -q tests
+      - name: Build
+        working-directory: src
+        run: python tools/build.py --version ${{ steps.job.outputs.version }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.target }}
+          path: |
+            src/out/Kairos-${{ matrix.target }}.zip
+            src/out/Moment-${{ matrix.target }}.zip
+          if-no-files-found: error
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read build.json
+        id: job
+        run: echo "sha=$(jq -r .sha build.json)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+          repository: WillByro/Moment
+          ref: ${{ steps.job.outputs.sha }}
+          ssh-key: ${{ secrets.SOURCE_DEPLOY_KEY }}
+          persist-credentials: false
+          path: src
+      - uses: actions/download-artifact@v4
+        with:
+          path: out
+          merge-multiple: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install cryptography
+      - name: Sign the update feeds
+        env:
+          KAIROS_SIGNING_KEY: ${{ secrets.KAIROS_SIGNING_KEY }}
+        run: |
+          export VERSION=$(jq -r .version build.json) NOTES=$(jq -r .notes build.json)
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          python src/tools/publish.py --version "$VERSION" --input out --site site --bridge-site site-moment
+      # kairos-releases goes first: if it can't be published, Moment installs aren't moved onto it.
+      - name: Publish to kairos-releases
+        env:
+          DEPLOY_KEY: ${{ secrets.KAIROS_DEPLOY_KEY }}
+        run: sh src/tools/push_site.sh site WillByro/kairos-releases
+      - name: Publish the bridge to moment-releases
+        env:
+          DEPLOY_KEY: ${{ secrets.MOMENT_RELEASES_KEY }}
+        run: sh src/tools/push_site.sh site-moment WillByro/moment-releases

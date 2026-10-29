@@ -1,5 +1,5 @@
 {
-  "sha": "d0d4a2535d7d0699a21e73acb3409b8001066364",
-  "version": "1.0.15",
-  "notes": "Draw the mascot in a native window on macOS\n\nTk draws nothing in a see-through window on macOS (checked on a real Mac: the window was on screen\nbut every pixel was clear), so the penguin never appeared there. On macOS it's now an NSWindow\nholding an image view, which also passes its clicks and drags to the mascot; Windows keeps the\nkeyed Tk window."
+  "sha": "4c40a79e6046a86960b042f55d88cf8f8bc36330",
+  "version": "1.0.16",
+  "notes": "Mascot moods, remarks, and full-screen manners\n\n- Happy during a session; cross outside one (frown and an anime cross-mark), and every few\n  minutes it says something disappointed but encouraging in a pixel speech bubble. It cheers when\n  a session starts.\n- Its feet now rest on top of the taskbar or Dock rather than sinking into it.\n- Over a full-screen video (a media player, or a video site in a browser) it hides; over any\n  other full-screen app it drops to the bottom of the screen, since the taskbar's hidden."
 }

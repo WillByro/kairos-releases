@@ -1,5 +1,5 @@
 {
-  "sha": "3c6a037618833da08d4c7822c3e198eac8459ada",
-  "version": "1.0.8",
-  "notes": "Pixel-art mascot that lives at the bottom of the screen\n\nWith Mascot on, the penguin sits above the taskbar or Dock: it blinks, wanders a little and dozes\noff, and waves when clicked. When something off-task has to close it waddles over, slaps the\nclose button with a flipper, and walks home. Drawn as a pixel sprite wearing the Kairos mark."
+  "sha": "2496c0f8d78aa44b20a42824a7dcb660bc128cb1",
+  "version": "1.0.9",
+  "notes": "Drag the mascot around and it falls back to the floor; smaller badge; Mac probe\n\n- Pick the penguin up and it flails; let go and it drops with a little bounce and makes that spot\n  its home. A click without dragging still makes it wave.\n- A smaller Kairos mark on its belly.\n- An error handling one banner command no longer stops the banner loop.\n- tools/mac_probe.py and a manual workflow to see what the mascot does on a real Mac."
 }

@@ -40,7 +40,7 @@ jobs:
           echo "version=$version" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         with:
-          repository: WillByro/Moment
+          repository: WillByro/Kairos
           ref: ${{ steps.job.outputs.sha }}
           ssh-key: ${{ secrets.SOURCE_DEPLOY_KEY }}
           persist-credentials: false
@@ -75,7 +75,7 @@ jobs:
         run: echo "sha=$(jq -r .sha build.json)" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         with:
-          repository: WillByro/Moment
+          repository: WillByro/Kairos
           ref: ${{ steps.job.outputs.sha }}
           ssh-key: ${{ secrets.SOURCE_DEPLOY_KEY }}
           persist-credentials: false

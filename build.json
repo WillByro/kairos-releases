@@ -1,5 +1,5 @@
 {
-  "sha": "913dc7aa46aad48593348515882d6b61555b5097",
-  "version": "1.0.2",
-  "notes": "Build from the renamed WillByro/Kairos repo"
+  "sha": "fea35c248fc1399cb9a78599a30412ea0c44d171",
+  "version": "1.0.3",
+  "notes": "Windows installer; unblock files extracted from a downloaded zip\n\nFiles extracted from a downloaded zip keep Windows' \"from the internet\" mark,\nand .NET refuses to load marked DLLs, so the window failed to open\n(Failed to resolve Python.Runtime.Loader.Initialize). Self-install now strips\nthe mark, and new Windows users get Kairos-setup.exe (Inno Setup, per-user,\nno admin), whose installed files never carry it and which unpacks faster."
 }

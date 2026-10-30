@@ -1,0 +1,22 @@
+{
+  "version": "1.0.20",
+  "published": "2026-10-30T06:12:22+00:00",
+  "notes": "Use any AI key, fairer judging, and the mascot stays on top\n\n- Works with Anthropic, OpenAI, Google Gemini or OpenRouter keys. Balanced is now the default.\n- Fairer judging: it gives the benefit of the doubt when the work purpose is clear, allows research sites for study sessions, and can allow a tool like Slack for the whole session.\n- Asking for time: typing pauses the countdown, and after a no you get the full time again to add detail (up to 3 asks). It says what detail would get it approved.\n- Repeat warnings count down 5 seconds, longer if you've already explained.\n- The mascot no longer disappears behind other windows, and on Windows walks to the tab's real close button.\n- Mac: no longer gives up on a blocked tab when its address can't be read for a moment.\n- The app window no longer shows an old version's page after an update.",
+  "assets": {
+    "windows-x64": {
+      "file": "Kairos-windows-x64.zip",
+      "size": 38485334,
+      "sha256": "95789a03b42af05ba556f0fce1c62035aaa7099c6387235017db3e37790b6d57"
+    },
+    "macos-arm64": {
+      "file": "Kairos-macos-arm64.zip",
+      "size": 33814797,
+      "sha256": "859c2a1357da967c83cdac17700af68331478c3f4de0910c1c041343e824d697"
+    },
+    "macos-x64": {
+      "file": "Kairos-macos-x64.zip",
+      "size": 34991061,
+      "sha256": "ccdddaf50cf3d5fa863c6b72bfca3f5fbb895add8171dd16e4cbcced896bb088"
+    }
+  }
+}

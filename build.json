@@ -1,5 +1,5 @@
 {
-  "sha": "120e2eee2bffe2ab4a810d9ef65812a86345efff",
-  "version": "1.0.18",
-  "notes": "Name your mascot, watch it gear up as you focus, emergency stops, and Mac fixes\n\n- Name the mascot in Settings. Click it to hear how long you've been locked in today; it earns a headband at 30 minutes, a gold one at 2 hours, and a crown at 4.\n- Emergency stops: end a locked session early, up to 3 times ever. Turn them off in Settings to make locked sessions unbreakable.\n- Mac: typing in the appeal banner works.\n- Mac: dragging the mascot no longer crashes Kairos.\n- Mac: the mascot stands on top of the Dock."
+  "sha": "a40636dc17d33094c17ae18f60f8ca1114966dbf",
+  "version": "1.0.19",
+  "notes": "Use any AI key, fairer judging, and the mascot stays on top\n\n- Works with Anthropic, OpenAI, Google Gemini or OpenRouter keys. Balanced is now the default.\n- Fairer judging: it gives the benefit of the doubt when the work purpose is clear, allows research sites for study sessions, and can allow a tool like Slack for the whole session.\n- Asking for time: typing pauses the countdown, and after a no you get the full time again to add detail (up to 3 asks). It says what detail would get it approved.\n- Repeat warnings count down 5 seconds, longer if you've already explained.\n- The mascot no longer disappears behind other windows, and on Windows walks to the tab's real close button.\n- Mac: no longer gives up on a blocked tab when its address can't be read for a moment.\n- The app window no longer shows an old version's page after an update."
 }

@@ -1,5 +1,5 @@
 {
-  "sha": "167202f0604013f045d759e5cd5442d211a2a7d4",
-  "version": "1.0.17",
-  "notes": "Judge new apps and sites sooner; right-click the mascot to hide it; Mac floor\n\n- The first check of an app or site starts half a second after it comes to the front, in the\n  background, and the loop acts the moment the verdict is back (it used to wait 2s, ask, then\n  wait for its next 1s tick). The loop looks twice a second instead of once.\n- Right-click the penguin: hide it for 15 minutes, an hour, or the rest of the day, or turn it\n  off (the same as the Settings switch). While it's hidden, things close without it.\n- macOS: it stands at the bottom of the screen. The Dock is a shelf in the middle rather than a\n  bar along the edge, so standing on it left the penguin in mid-air everywhere else."
+  "sha": "120e2eee2bffe2ab4a810d9ef65812a86345efff",
+  "version": "1.0.18",
+  "notes": "Name your mascot, watch it gear up as you focus, emergency stops, and Mac fixes\n\n- Name the mascot in Settings. Click it to hear how long you've been locked in today; it earns a headband at 30 minutes, a gold one at 2 hours, and a crown at 4.\n- Emergency stops: end a locked session early, up to 3 times ever. Turn them off in Settings to make locked sessions unbreakable.\n- Mac: typing in the appeal banner works.\n- Mac: dragging the mascot no longer crashes Kairos.\n- Mac: the mascot stands on top of the Dock."
 }

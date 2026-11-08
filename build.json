@@ -1,5 +1,5 @@
 {
-  "sha": "02b19d27acc6f42feab716994671342a8153ad8b",
-  "version": "1.0.22",
-  "notes": "Accountability gets its own tab, reports go by email only, and you can be CC'd\n\nThe contact, end-of-day time, name and sending account move out of Settings onto an Accountability\npage that also shows when the last report went. Webhooks are gone: reports, the intro note and the\n\"you've been replaced\" notice are emailed from your own address, copying you unless you turn that\noff. Inputs on settings pages keep one width beside long descriptions."
+  "sha": "45009cbd7cb2b54348c1fb18a7d18c6fb98b2b82",
+  "version": "1.0.23",
+  "notes": "Accountability emails need no setup, and you're told when a report doesn't get through\n\nReports now go through a small Kairos email server (server/reports, on Resend), so you only type\nyour contact's address; your own account with an app password is still an option. If a report\ncan't be sent, the app says so once and the Accountability tab shows why until one gets through,\nand changing settings retries straight away."
 }

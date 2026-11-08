@@ -1,5 +1,5 @@
 {
-  "sha": "218012bb2e4936ace1d485b28c4bd9c74ad22b42",
-  "version": "1.0.21",
-  "notes": "Daily accountability reports to a contact you choose; cover a window while you ask for time\n\nDuring sessions Kairos records what's in front and for how long. At end of day (9 PM by default)\nthe AI infers what you actually worked on from that activity and your stated focus, and the report\n(time locked in, the task, where the time went) is emailed or posted to a Discord, Slack or ntfy\nwebhook. It goes every day, sessions or not, catching up after the computer was off. The contact\ncan't be changed during a locked session, and an old contact is told when they're replaced.\n\nAlso: the window you're asking for time on is covered until approved, and the mascot is called\noff when the tab or app it was heading for is already gone."
+  "sha": "02b19d27acc6f42feab716994671342a8153ad8b",
+  "version": "1.0.22",
+  "notes": "Accountability gets its own tab, reports go by email only, and you can be CC'd\n\nThe contact, end-of-day time, name and sending account move out of Settings onto an Accountability\npage that also shows when the last report went. Webhooks are gone: reports, the intro note and the\n\"you've been replaced\" notice are emailed from your own address, copying you unless you turn that\noff. Inputs on settings pages keep one width beside long descriptions."
 }
